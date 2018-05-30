@@ -395,7 +395,7 @@ bool prf_read_mem_info() {
 
             find_me.name    = p_name;
             found           = (mem_name_value_t*)bsearch(&find_me, mem_data, sizeof(mem_data) / sizeof(mem_name_value_t),
-                                                        sizeof(mem_data[0]), prf_compare_mem_table_structs);
+                                                         sizeof(mem_data[0]), prf_compare_mem_table_structs);
 
             if (found) {
                 *(found->slot) = strtoull(p_value, NULL, 10);
@@ -428,7 +428,7 @@ Swap: %8ldk total, %8ldk used, %8ldk free, %8ldk cached\n\%s\n",
 }
 
 void prf_print_mem_info_full() {
-    printf("READ: %s\n",        PRF_MEM_INFO_FILE);
+    printf("READ: %s\n", PRF_MEM_INFO_FILE);
     printf(PRF_MEM_INFO_LINE \
            PRF_MEM_INFO_LINE \
            PRF_MEM_INFO_LINE \
@@ -453,31 +453,31 @@ void prf_print_mem_info_full() {
            PRF_MEM_INFO_LINE \
            PRF_MEM_INFO_LINE \
            PRF_MEM_INFO_LINE,
-           "Active:",          prf_kb_active,
-           "AnonPages:",       prf_kb_anon_pages,
-           "Bounce:",          prf_kb_bounce,
-           "Buffers:",         prf_kb_main_buffers,
-           "Cached:",          prf_kb_main_cached,
-           "CommitLimit:",     prf_kb_commit_limit,
-           "Committed_AS:",    prf_kb_committed_as,
-           "Dirty:",           prf_kb_dirty,
-           "Inactive:",        prf_kb_inactive,
-           "Mapped:",          prf_kb_mapped,
-           "MemFree:",         prf_kb_main_free,
-           "MemTotal:",        prf_kb_main_total,
-           "NFS_Unstable:",    prf_kb_nfs_unstable,
-           "PageTables:",      prf_kb_pagetables,
-           "SReclaimable:",    prf_kb_swap_reclaimable,
-           "SUnreclaim:",      prf_kb_swap_unreclaimable,
-           "Slab:",            prf_kb_slab,
-           "SwapCached:",      prf_kb_swap_cached,
-           "SwapFree:",        prf_kb_swap_free,
-           "SwapTotal:",       prf_kb_swap_total,
-           "VmallocChunk:",    prf_kb_vmalloc_chunk,
-           "VmallocTotal:",    prf_kb_vmalloc_total,
-           "VmallocUsed:",     prf_kb_vmalloc_used,
-           "Writeback:",       prf_kb_writeback);
-    printf("%s\n",      PRF_LIB_HEADER);
+           "Active:",           prf_kb_active,
+           "AnonPages:",        prf_kb_anon_pages,
+           "Bounce:",           prf_kb_bounce,
+           "Buffers:",          prf_kb_main_buffers,
+           "Cached:",           prf_kb_main_cached,
+           "CommitLimit:",      prf_kb_commit_limit,
+           "Committed_AS:",     prf_kb_committed_as,
+           "Dirty:",            prf_kb_dirty,
+           "Inactive:",         prf_kb_inactive,
+           "Mapped:",           prf_kb_mapped,
+           "MemFree:",          prf_kb_main_free,
+           "MemTotal:",         prf_kb_main_total,
+           "NFS_Unstable:",     prf_kb_nfs_unstable,
+           "PageTables:",       prf_kb_pagetables,
+           "SReclaimable:",     prf_kb_swap_reclaimable,
+           "SUnreclaim:",       prf_kb_swap_unreclaimable,
+           "Slab:",             prf_kb_slab,
+           "SwapCached:",       prf_kb_swap_cached,
+           "SwapFree:",         prf_kb_swap_free,
+           "SwapTotal:",        prf_kb_swap_total,
+           "VmallocChunk:",     prf_kb_vmalloc_chunk,
+           "VmallocTotal:",     prf_kb_vmalloc_total,
+           "VmallocUsed:",      prf_kb_vmalloc_used,
+           "Writeback:",        prf_kb_writeback);
+    printf("%s\n", PRF_LIB_HEADER);
 }
 
 int prf_compare_mem_table_structs(const void* a, const void* b) {
