@@ -36,7 +36,7 @@ See [man top](http://man7.org/linux/man-pages/man1/top.1.html) for further info.
 
 ### /proc/meminfo
 This file reports statistics about memory usage on the system.
-See the two lines starting with **KiB Mem** line of the **top** output.
+See the two lines starting with **KiB Mem** line of the **top** output:
 
 ```
 $ top
@@ -77,10 +77,10 @@ See [man pthread_create](http://man7.org/linux/man-pages/man3/pthread_create.3.h
 
 ## The Sample Application
 
-The sample application has a simple [configuration file](./application/bin/prf_system.cfg) which consists of Bash style **# comments** and **name=value** pairs.
+The sample application has a simple [configuration file](./application/bin/prf_system.cfg) which consists of Bash style **# comments** and **name=value** pairs:
 
 ```
-$ cat prf_system.cfg
+$ cat application/bin/prf_system.cfg
 # name=value
 #
 is_debug=true
