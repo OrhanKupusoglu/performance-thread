@@ -52,7 +52,7 @@ KiB Swap: 25059324 total, 25059324 free,        0 used. 21433828 avail Mem
 ### /proc/net/dev
 The dev pseudo-file contains network device status information.  This gives the number of received and sent packets, the number of errors and collisions and other basic statistics.
 
-## pthreads &mdash; POSIX Threads
+## POSIX Threads &mdash; pthreads
 
 The library is meant to be used in a **pthread** so that the calling thread can receive data about the system load in a timely manner.
 
