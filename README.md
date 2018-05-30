@@ -92,11 +92,18 @@ cpu_name=cpu
 cpu_load_type=5
 cpu_threshold=0.70
 interface_name=wlp2s0
-
 ```
 The sample application can create a pthread either as **joinable** or **detached**. In the detached mode the current application can use the **cpu_threshold** parameter, which is the system average load of the last **cpu_load_type** minutes,  to receive data back from the pthread.
 
 With the **cpu_name** parameter a certain CPU, like **cpu6** can be specified. The **cpu_load_type** parameter can be either **1, 5, or 15**, referring to load averages over 1, 5, and 15 minutes. The **cpu_threshold** parameter sets the threshold to decide whether the system is overloaded or not.
+
+The last parameter is the name of the network interface to be checked at the debug mode. Available interface names can be listed with the **ip a** command:
+
+```
+$ ip a
+```
+
+See [man ip](http://man7.org/linux/man-pages/man8/ip.8.html) for further info.
 
 Disabling **debug** removes clutter and only leaves the **cpu_threshold** value.
 
@@ -135,7 +142,6 @@ $ ./build.sh run
 $ ./build.sh run
 
 == detached: 0.17 | is overloaded? false
-
 ```
 
 
