@@ -115,7 +115,7 @@ As a side note, POSIX reserves suffix **_t**, see [IEEE Std 1003.1-2017, 2018 Ed
 This project consists of a library to read **proc** data and a sample application to use this library. Both are built by [CMake](https://cmake.org/). For convenience a [build script](./build.sh) is provided:
 
 ```
-$ sudo apt-get install cmake
+$ sudo apt install cmake
 
 $ ./build.sh help
 USAGE: enter a command, no command defaults to 'build'
