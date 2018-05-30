@@ -46,7 +46,6 @@ Tasks: 274 total,   1 running, 273 sleeping,   0 stopped,   0 zombie
 %Cpu(s):  0,9 us,  0,9 sy,  0,0 ni, 98,1 id,  0,0 wa,  0,0 hi,  0,0 si,  0,0 st
 KiB Mem : 24581148 total, 20272608 free,  2317568 used,  1990972 buff/cache
 KiB Swap: 25059324 total, 25059324 free,        0 used. 21433828 avail Mem
-
 ```
 
 ### /proc/net/dev
@@ -113,9 +112,11 @@ As a side note, POSIX reserves suffix **_t**, see [IEEE Std 1003.1-2017, 2018 Ed
 
 ## CMake
 
-This project consists of a library to read **proc** data and a sample application to use this library. Both are built by [CMake](https://cmake.org/). For convenience a build script is provided:
+This project consists of a library to read **proc** data and a sample application to use this library. Both are built by [CMake](https://cmake.org/). For convenience a [build script](./build.sh) is provided:
 
 ```
+$ sudo apt-get install cmake
+
 $ ./build.sh help
 USAGE: enter a command, no command defaults to 'build'
     build         -- call 'lib cmake; lib make; app cmake; app make;'
