@@ -102,6 +102,8 @@ Disabling **debug** removes clutter and only leaves the **cpu_threshold** value.
 
 A **SIGINT** signal, **CTRL + C**, terminates the application.
 
+As a side note, POSIX reserves suffix **_t**, see [IEEE Std 1003.1-2017, 2018 Edition §2.2.2](http://pubs.opengroup.org/onlinepubs/9699919799/functions/V2_chap02.html#tag_15_02_02). Although I have tried suffix **_x** for my type declarations (enums and structures), I have reverted back since they were looking weird.
+
 ## CMake
 
 This project consists of a library to read **proc** data and a sample application to use this library. Both are built by [CMake](https://cmake.org/). For convenience a build script is provided:
