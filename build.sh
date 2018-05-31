@@ -20,10 +20,10 @@ APP=prf-system-app
 # helper functions
 help () {
     echo "USAGE: enter a command, no command defaults to 'build'"
-    echo "    build         -- call 'lib cmake; lib make; app cmake; app make;'"
-    echo "    clean         -- call 'lib clean; app clean;'"
-    echo "    prune         -- call 'lib prune; app prune;'"
-    echo "    purge         -- call 'clean; prune;'"
+    echo "    build         -- call 'lib cmake; lib make; app cmake; app make'"
+    echo "    clean         -- call 'lib clean; app clean'"
+    echo "    prune         -- call 'lib prune; app prune'"
+    echo "    purge         -- call 'clean; prune'"
     echo "    run           -- run the test executable"
     echo "    help          -- print this help"
     echo "    lib cmake     -- call 'cmake'"
