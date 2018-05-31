@@ -119,10 +119,10 @@ $ sudo apt install cmake
 
 $ ./build.sh help
 USAGE: enter a command, no command defaults to 'build'
-    build         -- call 'lib cmake; lib make; app cmake; app make;'
-    clean         -- call 'lib clean; app clean;'
-    prune         -- call 'lib prune; app prune;'
-    purge         -- call 'clean; prune;'
+    build         -- call 'lib cmake; lib make; app cmake; app make'
+    clean         -- call 'lib clean; app clean'
+    prune         -- call 'lib prune; app prune'
+    purge         -- call 'clean; prune'
     run           -- run the test executable
     help          -- print this help
     lib cmake     -- call 'cmake'
