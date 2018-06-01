@@ -306,7 +306,7 @@ bool prf_read_cpu_info() {
 }
 
 void prf_print_cpu_load() {
-    printf("READ: %s\n%s: %ld, %ld, %ld, %ld, %ld, %ld, %ld, %ld\n\%s\n",
+    printf("READ: %s\n%s: %ld, %ld, %ld, %ld, %ld, %ld, %ld, %ld\n%s\n",
             PRF_CPU_INFO_FILE,
             prf_cfg_cpu_name,
             prf_cpu[0], prf_cpu[1], prf_cpu[2], prf_cpu[3],
@@ -317,7 +317,7 @@ void prf_print_cpu_load() {
 // modelled after top's CPU line, example:
 // Cpu(s):  1.3%us, 28.0%sy,  0.0%ni, 70.3%id,  0.0%wa,  0.3%hi,  0.0%si,  0.0%st
 void prf_print_cpu_pt_load() {
-    printf("READ: %s\nCpu: %6.1f%%us, %6.1f%%sy, %6.1f%%ni, %6.1f%%id, %6.1f%%wa, %6.1f%%hi, %6.1f%%si, %6.1f%%st\n\%s\n",
+    printf("READ: %s\nCpu: %6.1f%%us, %6.1f%%sy, %6.1f%%ni, %6.1f%%id, %6.1f%%wa, %6.1f%%hi, %6.1f%%si, %6.1f%%st\n%s\n",
             PRF_CPU_INFO_FILE,
             prf_cpu_pt[0], prf_cpu_pt[1], prf_cpu_pt[2], prf_cpu_pt[3],
             prf_cpu_pt[4], prf_cpu_pt[5], prf_cpu_pt[6], prf_cpu_pt[7],
@@ -420,7 +420,7 @@ bool prf_read_mem_info() {
 void prf_print_mem_info() {
     printf("READ: %s\n\
 Mem: %9ldk total, %8ldk used, %8ldk free, %8ldk buffers\n\
-Swap: %8ldk total, %8ldk used, %8ldk free, %8ldk cached\n\%s\n",
+Swap: %8ldk total, %8ldk used, %8ldk free, %8ldk cached\n%s\n",
         PRF_MEM_INFO_FILE,
         prf_kb_main_total, prf_kb_main_used, prf_kb_main_free, prf_kb_main_buffers,
         prf_kb_swap_total, prf_kb_swap_used, prf_kb_swap_free, prf_kb_main_cached,
