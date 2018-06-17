@@ -53,7 +53,7 @@ The dev pseudo-file contains network device status information.  This gives the 
 
 ## POSIX Threads &mdash; pthreads
 
-The library is meant to be used in a **pthread** so that the calling thread can receive data about the system load in a timely manner.
+The library is meant to be used in a [pthread](https://en.wikipedia.org/wiki/POSIX_Threads) so that the calling thread can receive data about the system load in a timely manner.
 
 See [man pthreads](http://man7.org/linux/man-pages/man7/pthreads.7.html) for further info.
 
