@@ -5,8 +5,6 @@
 
 #include "prf_system.h"
 
-#define PRF_PRINT_ERROR
-
 #define PRF_LIB_HEADER          PRF_REP(0,8,0, "-")
 #define PRF_PER_READS           "PERIODIC READS"
 #define PRF_LOAD_AVG_FILE       "/proc/loadavg"
@@ -293,12 +291,10 @@ bool prf_read_cpu_info() {
 
             status = true;
         } else {
-#ifdef PRF_PRINT_ERROR
             if (!prf_cpu_warned) {
                 prf_cpu_warned = true;
                 fprintf(stderr, "** ERROR - unable to find the CPU '%s'\n", prf_cfg_cpu_name);
             }
-#endif
         }
     }
 
@@ -533,12 +529,10 @@ bool prf_read_net_info() {
 
             status = true;
         } else {
-#ifdef PRF_PRINT_ERROR
             if (!prf_net_warned) {
                 prf_net_warned = true;
                 fprintf(stderr, "** ERROR - unable to find the interface '%s'\n", prf_cfg_interface_name);
             }
-#endif
         }
     }
 
@@ -607,16 +601,12 @@ bool prf_read_file(const char* file_name, char** buffer, long* file_size) {
             fread(*buffer, 1, (*file_size -1), fl);
             status = true;
         } else {
-#ifdef PRF_PRINT_ERROR
             fprintf(stderr, "** ERROR - memory error!");
-#endif
         }
 
         fclose(fl);
     } else {
-#ifdef PRF_PRINT_ERROR
-            fprintf(stderr, "** ERROR - unable to open file '%s'\n", file_name);
-#endif
+        fprintf(stderr, "** ERROR - unable to open file '%s'\n", file_name);
     }
 
     return status;
