@@ -22,18 +22,18 @@ help () {
     echo "USAGE: enter a command, no command defaults to 'build'"
     echo "    build         -- call 'lib cmake; lib make; app cmake; app make'"
     echo "    clean         -- call 'lib clean; app clean'"
-    echo "    prune         -- call 'lib prune; app prune'"
-    echo "    purge         -- call 'clean; prune'"
+    echo "    purge         -- call 'lib purge; app purge'"
+    echo "    expunge       -- call 'clean; purge'"
     echo "    run           -- run the test executable"
     echo "    help          -- print this help"
     echo "    lib cmake     -- call 'cmake'"
     echo "    lib make      -- call 'make; make install'"
     echo "    lib clean     -- call 'make clean'"
-    echo "    lib prune     -- prune all artifacts"
+    echo "    lib purge     -- purge all artifacts"
     echo "    app cmake     -- call 'cmake'"
     echo "    app make      -- call 'make'"
     echo "    app clean     -- call 'make clean'"
-    echo "    app prune     -- prune all artifacts"
+    echo "    app purge     -- purge all artifacts"
 }
 
 action() {
@@ -43,10 +43,10 @@ action() {
     local ACTION_ING=""
     local ACTION_ED=""
     local INST=""
-    local PRUNE=""
+    local PUNGE=""
 
     case "$PROJ" in
-        "lib")      DIR="library" ; INST="make install" ; PRUNE="cd $DIR_WORK/$DIR/lib ; find . ! -name '.gitignore' -delete" ;;
+        "lib")      DIR="library" ; INST="make install" ; PUNGE="cd $DIR_WORK/$DIR/lib ; find . ! -name '.gitignore' -delete" ;;
         "app")      DIR="application" ;;
         *)          echo "ERROR: argument proj '${PROJ}' is not supported" ; exit 1 ;;
     esac
@@ -55,7 +55,7 @@ action() {
         "cmake")    ACTION_ING="CMaking" ; ACTION_ED="CMaked" ;;
         "make")     ACTION_ING="Making" ; ACTION_ED="Maked" ;;
         "clean")    ACTION_ING="Cleaning" ; ACTION_ED="Cleaned" ;;
-        "prune")    ACTION_ING="Pruning" ; ACTION_ED="Pruned" ; ;;
+        "purge")    ACTION_ING="Purging" ; ACTION_ED="Purged" ; ;;
         *)          echo "ERROR: argument command '${CMD}' is not supported" ; exit 2 ;;
     esac
 
@@ -67,7 +67,7 @@ action() {
         "cmake")      cmake ../. ;;
         "make")       make ; eval $INST ;;
         "clean")      make clean ;;
-        "prune")      find . ! -name '.gitignore' -delete ; eval $PRUNE ;;
+        "purge")      find . ! -name '.gitignore' -delete ; eval $PURGE ;;
     esac
 
     echo "++ ${ACTION_ED} the ${DIR} project."
@@ -86,14 +86,14 @@ clean() {
     action app clean
 }
 
-prune() {
-    action lib prune
-    action app prune
+purge() {
+    action lib purge
+    action app purge
 }
 
-purge() {
+expunge() {
     clean
-    prune
+    purge
 }
 
 run() {
@@ -112,8 +112,8 @@ run() {
 case "$ACTION" in
     "build")        build ; exit 0 ;;
     "clean")        clean ; exit 0 ;;
-    "prune")        prune ; exit 0 ;;
     "purge")        purge ; exit 0 ;;
+    "expunge")      expunge ; exit 0 ;;
     "run")          run ; exit 0 ;;
     "help")         help ; exit 0 ;;
     "lib"|"app")    action "$ACTION" "$COMMAND" ; exit 0 ;;
