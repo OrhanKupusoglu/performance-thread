@@ -121,18 +121,18 @@ $ ./build.sh help
 USAGE: enter a command, no command defaults to 'build'
     build         -- call 'lib cmake; lib make; app cmake; app make'
     clean         -- call 'lib clean; app clean'
-    prune         -- call 'lib prune; app prune'
-    purge         -- call 'clean; prune'
+    purge         -- call 'lib purge; app purge'
+    expunge       -- call 'clean; purge'
     run           -- run the test executable
     help          -- print this help
     lib cmake     -- call 'cmake'
     lib make      -- call 'make; make install'
     lib clean     -- call 'make clean'
-    lib prune     -- prune all artifacts
+    lib purge     -- purge all artifacts
     app cmake     -- call 'cmake'
     app make      -- call 'make'
     app clean     -- call 'make clean'
-    app prune     -- prune all artifacts
+    app purge     -- purge all artifacts
 
 $ ./build.sh
 
