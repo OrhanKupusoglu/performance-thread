@@ -25,7 +25,6 @@ help () {
     echo "    purge         -- call 'lib purge; app purge'"
     echo "    expunge       -- call 'clean; purge'"
     echo "    run           -- run the test executable"
-    echo "    help          -- print this help"
     echo "    lib cmake     -- call 'cmake'"
     echo "    lib make      -- call 'make; make install'"
     echo "    lib clean     -- call 'make clean'"
@@ -34,6 +33,7 @@ help () {
     echo "    app make      -- call 'make'"
     echo "    app clean     -- call 'make clean'"
     echo "    app purge     -- purge all artifacts"
+    echo "    help          -- print this help"
 }
 
 action() {

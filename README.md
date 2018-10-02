@@ -124,7 +124,6 @@ USAGE: enter a command, no command defaults to 'build'
     purge         -- call 'lib purge; app purge'
     expunge       -- call 'clean; purge'
     run           -- run the test executable
-    help          -- print this help
     lib cmake     -- call 'cmake'
     lib make      -- call 'make; make install'
     lib clean     -- call 'make clean'
@@ -133,6 +132,7 @@ USAGE: enter a command, no command defaults to 'build'
     app make      -- call 'make'
     app clean     -- call 'make clean'
     app purge     -- purge all artifacts
+    help          -- print this help
 
 $ ./build.sh
 
